@@ -20,8 +20,8 @@ var carDetails = {
 /*
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
-
 //Code Here
+var object.assign ({color, make, model, year}) = carDetails;
 
 
 
@@ -35,12 +35,13 @@ var carDetails = {
 
 function greeting( obj ) {
   //Code Here
-  
+  let obj;
+  [fistName, lastName, title] = greeting( obj );
+
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
 }
-
 
 
 ////////// PROBLEM 3 //////////
@@ -54,7 +55,10 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function totalPopulation(utah, california, texas, arizona) {
+  return utah + california + texas + arizona; 
+}
+x = totalPopulation(1, 2, 3, 4,);  
 
 
 ////////// PROBLEM 4 //////////
@@ -68,6 +72,10 @@ function greeting( obj ) {
 */
 
 //Code Here
+function ingredients(crab, fat, protein) {
+console.log('crab '+ 'fat '+ 'protein');
+}
+ingredients();
 
 
 
@@ -86,7 +94,9 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function largeNumbers({first, second, third}) {
+ let (1, 2, 3) = largeNumbers;
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -98,5 +108,9 @@ function greeting( obj ) {
 */
 
 //Code Here
+function numberGroups({a, b, c}) {
+return a + b + c;
+}
+x=numberGroups(1, 2, 3);
 
-
+ 
