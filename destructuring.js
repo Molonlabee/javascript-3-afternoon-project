@@ -21,7 +21,9 @@ var carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 //Code Here
-var object.assign ({color, make, model, year}) = carDetails;
+
+const {color, make, model, year} = carDetails;
+// console.log(carDetails);
 
 
 
@@ -35,13 +37,14 @@ var object.assign ({color, make, model, year}) = carDetails;
 
 function greeting( obj ) {
   //Code Here
-  let obj;
-  [fistName, lastName, title] = greeting( obj );
+  console.log(obj);
+ const {firstName, lastName, title} = obj;
 
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
 }
+// console.log(greeting);
 
 
 ////////// PROBLEM 3 //////////
@@ -55,10 +58,13 @@ function greeting( obj ) {
 */
 
 //Code Here
-function totalPopulation(utah, california, texas, arizona) {
+function totalPopulation({utah, california, texas, arizona}) {
   return utah + california + texas + arizona; 
+  
 }
-x = totalPopulation(1, 2, 3, 4,);  
+let newObj = { utah:1, california: 2, texas: 3, arizona:4}
+
+totalPopulation(newObj);
 
 
 ////////// PROBLEM 4 //////////
@@ -72,22 +78,19 @@ x = totalPopulation(1, 2, 3, 4,);
 */
 
 //Code Here
-function ingredients(crab, fat, protein) {
-console.log('crab '+ 'fat '+ 'protein');
+function ingredients(obj) {
+  let {carb, fat, protein} = obj;
+  let arr =[carb, fat, protein];
+  return arr;
 }
-ingredients();
-
-
 
 ////////// PROBLEM 5 //////////
-
 /*
   Now we will use object destructuring as the function's parameter instead of destructuring the object inside of the function declaration.
   Example:
     function example( {one, two, three} ) {
       return one + two + three
     }
-
   Write a function called largeNumbers that will take a destructured object as it's parameter.
   The object properties will be named first, second, and third and their values will be numbers.
   Find the smallest number of the three and return that number.
@@ -95,9 +98,17 @@ ingredients();
 
 //Code Here
 function largeNumbers({first, second, third}) {
- let (1, 2, 3) = largeNumbers;
+  let arr = [first, second, third]
+  let smallest = first;
+  for (let i = 0; i < arr.length; i++) {
+    if (smallest > arr[i]) {
+      smallest = arr[i]
+    }
+  }
+  //or
+  // return Math.min(first, second, third)
+  return smallest;
 }
-
 
 ////////// PROBLEM 6 //////////
 
@@ -108,9 +119,12 @@ function largeNumbers({first, second, third}) {
 */
 
 //Code Here
-function numberGroups({a, b, c}) {
-return a + b + c;
+function numberGroups({a, b, c}){
+  if (Math.max(a.length, b.length, c.length) === a.length){
+    return a
+  } else if (Math.max(a.length, b.length, c.length) === b.length) {
+    return b
+  } else
+  return c
 }
-x=numberGroups(1, 2, 3);
-
  

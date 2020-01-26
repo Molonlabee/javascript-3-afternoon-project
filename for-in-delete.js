@@ -39,19 +39,13 @@
   Inside the function showValues, write a for in loop that concatenates each of the property values and returns the concatenated string.
 */
 
- var showValues( obj ) {
-  Code Here
-   one: 'These',
-   two: ' are',
-   three: ' the',
-   four: ' property',
-   five: ' values.'}
-
-   var showValues =[one, two, three, four, five];
-    for(var prop in showValues){
-       showValues.push(prop);
-       console.log(showValues)
-  
+//Code Here
+function showValues(obj) {
+  let str = "";
+  for (var key in obj) {
+    str = str + obj[key];
+  }
+  return str;
 }
 
 
@@ -65,12 +59,14 @@
 */
 
 //Code Here
-var greaterThan10(obj) {
-  for(let key in obj) {
-    if(obj[key]>10) {
-      return obj;
+function greaterThan10(obj) {
+  for (var key in obj) {
+    if (obj[key] > 10) {
+      obj[key] = 0;
     }
   }
+  return obj;
+}
 
 ////////// PROBLEM 3 //////////
 
@@ -82,9 +78,10 @@ var greaterThan10(obj) {
 
 //Code Here
 function double(obj) {
-for(var key in obj) {
-  obj[key] = obj[key * 2;]
-} return obj;
+  for (var key in obj) {
+    obj[key] = obj[key] *= 2;
+  }
+  return obj;
 }
 
 
@@ -115,17 +112,18 @@ function secrets(obj) {
   Uncomment the example below to see a for in loop deleting all the properties inside an object.
 */
 
-// var deleteAllThethings = {
-//   one: 1,
-//   two: 2,
-//   three: 3
-// }
+//Code Here
+var deleteAllThethings = {
+  one: 1,
+  two: 2,
+  three: 3
+}
 
-// for(var key in deleteAllThethings) {
-//   delete deleteAllThethings[key]
-// }
+for(var key in deleteAllThethings) {
+  delete deleteAllThethings[key]
+}
 
-// console.log(deleteAllThethings)
+console.log(deleteAllThethings)
 
 
 
@@ -184,11 +182,12 @@ ghost(deleteTheBigNumbers);
 
 //Code Here
 function startsWithK(obj) {
-  for(let key in obj) {
-    if(key.startsWithK("k")) {
+  for (var key in obj) {
+    if (key.startsWith("k")) {
       delete obj[key];
     }
-  } return obj;
+  }
+  return obj;
 }
 
 
@@ -205,11 +204,10 @@ function startsWithK(obj) {
 
 //Code Here
 function hiddenTreasure(obj) {
-  for(let key in obj) {
-    //syntax (object.keys(obj));
-    if(obj[key].includes("treasure")) {
+  for (var key in obj) {
+    if (obj[key].includes("treasure") === false) {
       delete obj[key];
     }
-  } return obj;
+  }
+  return obj;
 }
-

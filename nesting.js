@@ -44,18 +44,26 @@ var employees = [
 // Do not edit the code above.
 
 /*
-  Create a function called 'employeeUpdater' that takes no parameters. employeeUpdater will loop over the array above and perform the following:
+  Create a function called 'employeeUpdater' that takes no parameters. 
+  employeeUpdater will loop over the array above and perform the following:
     1. If employee's first name is Theo, remove that employee because he just got fired.
     2. If the employee's first name is Lorie, change her department to 'HR'.
     3. Return the updated employee array.
 */
 
 //Code Here
-function employeeUpdater() {
-  delete employees.firstName.Theo;
+function employeeUpdater (){
+  for(var i=0; i<employees.length; i++){
+  if (employees[i].firstName === 'Theo'){
+    employees.splice(i,1)
+  } else {if (employees[i].firstName === 'Lorie'){
+    employees[i].department = 'HR'
+  }}
+}
+return employees;
 }
 
-
+console.log(employeeUpdater());
 
 ////////// PROBLEM 2 //////////
 
@@ -72,12 +80,16 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
-function removeDuplicates(arra) {
-  for (i = 0; i < Array.length; i++);
-    if(removeDuplicates.indexOf(array[i]) === -1) {
-      workplaceAccidents.push(array[i]);
- }} 
-comsole.log(removeDuplicates);
+let removeDuplicates = () => {
+  for (let i = 0; i < workplaceAccidents.length; i++){
+    for (let j = workplaceAccidents.length - 1; j >= 0; j--){
+      if (workplaceAccidents[i] === workplaceAccidents[j] && i !== j){
+        workplaceAccidents.splice(i, 1)
+      }
+    }
+  }
+  return workplaceAccidents
+}
 
 ////////// PROBLEM 3 //////////
 
@@ -148,13 +160,11 @@ var myCar = {
 */
 
 //Code Here
-funciton recordCleaner(atFaultForAccident) {
-
-If(atFaultForAccident === 'true') {	
-  Return console.log('false')
-  } 
-}
-console.log(recordCleaner);
+  let recordCleaner = () => {
+    myCar.accidents.forEach(e => {
+      e.atFaultForAccident = false
+    })
+  }
 
 
 
@@ -174,17 +184,18 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
-function looper(arr) {
-  newArr = [];
-  for (let i = 0; i < arr.length; i++) {
-    for(let nested i = 0; nested i< arr[i].length; nested i++) {
-      if(arr[i][nested i] % 2 === 0 ) {
-        arr[i][nested i] = "even";
-      }
-      else {
-      arr[i][nested i] = "odd"
-      }
-  }
+let looper = () => {
+  numsArr[0].forEach((e, i) => {
+    if(e % 2 === 0) numsArr[0][i] = 'even'
+    else numsArr[0][i] = 'odd'
+  });
+  numsArr[1].forEach((e, i) => {
+    if(e % 2 === 0) numsArr[1][i] = 'even'
+    else numsArr[1][i] = 'odd'
+  });
+  numsArr[2].forEach((e, i) => {
+    if(e % 2 === 0) numsArr[2][i] = 'even'
+    else numsArr[2][i] = 'odd'
+  });
+ return numsArr
 }
-return arr;
-looper(numsArr);
